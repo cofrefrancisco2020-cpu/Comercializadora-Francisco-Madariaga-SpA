@@ -61,3 +61,27 @@ main section,.store-tile,.location-card{scroll-margin-top:95px}
 @media(max-width:760px){.intro-aside{gap:0}.intro-logos{margin:0 0 40px;max-width:340px}.intro-logo-card{min-height:155px}.intro-logo-card img{width:90px;height:90px}.intro-logo-eco img{width:110px}.js .intro-content .display-title.reveal,.js .branch-heading-left.reveal,.js .branch-heading-right.reveal{transform:translate3d(0,65px,0)}.js .intro-content .display-title.reveal.is-visible,.js .branch-heading-left.reveal.is-visible,.js .branch-heading-right.reveal.is-visible{transform:none}.running-band{height:66px}.running-track{font-size:24px}.eco-ticker-unit{font-size:32px}.eco-ticker-unit i{padding:0 12px}}
 @media(max-width:540px){.intro-logos{max-width:none}.intro-logo-card{min-height:145px}.intro-logo-card img{width:82px;height:82px}.intro-logo-eco img{width:100px}.eco-ticker{margin-top:18px}.eco-ticker-unit{font-size:30px;padding:10px 0 8px}.branch-eco .products-head{margin-top:58px}}
 @media(prefers-reduced-motion:reduce){.js .reveal,.js .hero h1.reveal,.js .intro-content .display-title.reveal,.js .branch-heading-left.reveal,.js .branch-heading-right.reveal,.js .intro-logo-card.reveal,.js .store-tile.reveal,.js .product-card.reveal{opacity:1;transform:none;filter:none;transition:none;will-change:auto}.eco-ticker-track,.running-track,.loop-symbol{animation:none}.js .store-tile.reveal img,.js .feature-photo.reveal img,.js .eco-photo.reveal img{transform:none;transition:none}}
+
+/* Version 3: real local photography and direct contact for each business. */
+html{overflow-x:clip}
+.store-tile-meat img{object-position:center 58%}
+.store-tile-eco img{object-position:center 56%}
+.feature-photo img{object-position:center 57%}
+.eco-photo img{object-position:center 54%}
+.branch-socials{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;max-width:560px;margin-top:24px}
+.social-link{min-width:0;display:flex;align-items:center;gap:10px;padding:9px 12px 9px 9px;background:#fff;border:1px solid #cbd0c8;box-shadow:0 5px 14px #172b1b0a;transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease}
+.social-link:hover{transform:translateY(-3px);border-color:var(--ink);box-shadow:0 9px 22px #172b1b16}
+.social-link img{width:36px;height:36px;flex:none;border-radius:9px}
+.social-link span{display:flex;flex-direction:column;min-width:0}
+.social-link strong{font-size:13px;line-height:1.1}
+.social-link small{font-size:11px;line-height:1.2;color:#61716a;margin-top:3px;overflow-wrap:anywhere}
+.social-link b{font-size:18px;font-weight:400;margin-left:auto;align-self:flex-start}
+.location-card p{margin-bottom:10px}
+.location-email{display:inline-flex;gap:8px;max-width:100%;font-size:13px;font-weight:700;color:var(--green);border-bottom:1px solid currentColor;padding-bottom:4px;margin:0 0 24px;overflow-wrap:anywhere}
+.location-email:hover{color:var(--red)}
+.contact-email{display:flex;flex-direction:column;align-items:flex-start;gap:7px;margin-top:24px}
+.contact-email>span{font-family:var(--display);font-weight:700;font-size:13px;letter-spacing:.13em}
+.contact-email a{font-size:16px;font-weight:700;border-bottom:1px solid var(--ink);padding-bottom:5px;overflow-wrap:anywhere}
+.contact-email a:hover{color:var(--green);border-color:var(--green)}
+@media(max-width:540px){.branch-socials{grid-template-columns:1fr;gap:8px}.social-link{padding:8px 12px 8px 8px}.social-link img{width:34px;height:34px}.contact-email a{font-size:15px}.location-email{font-size:12px}}
+@media(prefers-reduced-motion:reduce){.social-link{transition:none}}
