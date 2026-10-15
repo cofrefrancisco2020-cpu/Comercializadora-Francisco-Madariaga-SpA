@@ -115,3 +115,17 @@ html{overflow-x:clip}
 @media(max-width:760px){.brand-lane{display:block}.brand-lane-head{flex-direction:row;justify-content:space-between;align-items:end;padding:0 0 12px}.brand-logo-tile{width:125px;height:70px;padding:11px 14px}.brand-product-notes{grid-template-columns:1fr;margin-top:38px}.brand-product-note{grid-template-columns:135px 1fr}.product-image{height:190px}}
 @media(max-width:540px){.brands-intro{margin-bottom:35px}.brand-marquees{gap:26px}.brand-lane-head strong{font-size:16px}.brand-lane-head span{font-size:10px;text-align:right}.brand-logo-tile{width:108px;height:64px;padding:9px 11px}.brand-product-note{grid-template-columns:110px 1fr;min-height:130px}.brand-product-note>div{padding:14px}.brand-product-note h3{font-size:20px}.brand-product-note p{font-size:11px}.product-image{height:155px}}
 @media(prefers-reduced-motion:reduce){.brand-track{animation:none;will-change:auto}.brand-group[aria-hidden="true"]{display:none}.brand-viewport{overflow-x:auto;mask-image:none;scrollbar-width:thin}}
+
+/* Version 5: show whole brand cards at rest and advance one card at a time. */
+.brand-marquees{grid-template-columns:minmax(0,1fr);min-width:0}
+.brand-lane{min-width:0}
+.brand-viewport{width:100%;max-width:100%;justify-self:center;mask-image:none}
+.brand-track,.brand-lane-eco .brand-track{animation:none;transition:transform .65s cubic-bezier(.2,.7,.25,1);will-change:transform}
+.brand-logo-tile{box-sizing:border-box}
+.brand-stage{position:relative;width:100%}
+.brand-slide{position:absolute;inset:0;display:flex;gap:10px;pointer-events:none}
+.brand-slide img{transition:opacity .21s ease}
+.brand-stage.is-changing img{opacity:0}
+.brand-product-note img{object-fit:contain;background:#fff}
+@media(max-width:760px){.brand-viewport{margin-inline:auto}}
+@media(prefers-reduced-motion:reduce){.brand-viewport{width:100%!important;max-width:100%;justify-self:stretch;overflow-x:auto}.brand-track,.brand-lane-eco .brand-track{transition:none;will-change:auto}}
