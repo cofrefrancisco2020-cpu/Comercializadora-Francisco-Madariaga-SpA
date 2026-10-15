@@ -116,16 +116,23 @@ html{overflow-x:clip}
 @media(max-width:540px){.brands-intro{margin-bottom:35px}.brand-marquees{gap:26px}.brand-lane-head strong{font-size:16px}.brand-lane-head span{font-size:10px;text-align:right}.brand-logo-tile{width:108px;height:64px;padding:9px 11px}.brand-product-note{grid-template-columns:110px 1fr;min-height:130px}.brand-product-note>div{padding:14px}.brand-product-note h3{font-size:20px}.brand-product-note p{font-size:11px}.product-image{height:155px}}
 @media(prefers-reduced-motion:reduce){.brand-track{animation:none;will-change:auto}.brand-group[aria-hidden="true"]{display:none}.brand-viewport{overflow-x:auto;mask-image:none;scrollbar-width:thin}}
 
-/* Version 5: show whole brand cards at rest and advance one card at a time. */
+/* Version 6: restore the continuous carousel and give each logo more white space. */
 .brand-marquees{grid-template-columns:minmax(0,1fr);min-width:0}
 .brand-lane{min-width:0}
-.brand-viewport{width:100%;max-width:100%;justify-self:center;mask-image:none}
-.brand-track,.brand-lane-eco .brand-track{animation:none;transition:transform .65s cubic-bezier(.2,.7,.25,1);will-change:transform}
-.brand-logo-tile{box-sizing:border-box}
-.brand-stage{position:relative;width:100%}
-.brand-slide{position:absolute;inset:0;display:flex;gap:10px;pointer-events:none}
-.brand-slide img{transition:opacity .21s ease}
-.brand-stage.is-changing img{opacity:0}
+.brand-viewport{width:100%;min-width:0;overflow:hidden;scrollbar-width:none}
+.brand-track,.brand-lane-eco .brand-track{animation:brand-move 36s linear infinite;transition:none;will-change:transform}
+.brand-lane-eco .brand-track{animation-direction:reverse;animation-duration:43s}
+.brand-viewport:hover .brand-track{animation-play-state:running}
+.brand-logo-tile{display:flex;align-items:center;justify-content:center;overflow:hidden;padding:16px 20px}
+.brand-logo-tile img{display:block;width:100%;height:100%;max-width:100%;max-height:100%;object-fit:contain;object-position:center center}
+.brand-logo-tile img[src$="super-pollo.webp"],.brand-logo-tile img[src$="super-cerdo.png"],.brand-logo-tile img[src$="nivea.svg"],.brand-logo-tile img[src$="elite.png"],.brand-logo-tile img[src$="savory.png"]{transform:scale(1.18)}
+.brand-logo-tile img[src$="dove.jpg"]{transform:scale(1.28)}
 .brand-product-note img{object-fit:contain;background:#fff}
-@media(max-width:760px){.brand-viewport{margin-inline:auto}}
-@media(prefers-reduced-motion:reduce){.brand-viewport{width:100%!important;max-width:100%;justify-self:stretch;overflow-x:auto}.brand-track,.brand-lane-eco .brand-track{transition:none;will-change:auto}}
+@media(max-width:760px){.brand-logo-tile{padding:13px 17px}}
+@media(max-width:540px){.brand-logo-tile{padding:12px 15px}}
+@media(prefers-reduced-motion:reduce){
+  .brand-track,.brand-lane-eco .brand-track{animation:brand-move 60s linear infinite;will-change:transform}
+  .brand-lane-eco .brand-track{animation-direction:reverse;animation-duration:70s}
+  .brand-group[aria-hidden="true"]{display:flex}
+  .brand-viewport{overflow:hidden;mask-image:linear-gradient(to right,transparent,#000 5%,#000 95%,transparent);scrollbar-width:none}
+}
